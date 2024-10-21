@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themezy - Event Booking Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #2C2C2C;
+            color: #E0E0E0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #121212;
+            padding: 1em;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #FFD700;
+            font-size: 1.5em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 0.5em;
+        }
+
+        .nav-links a:hover {
+            color: #008080;
+        }
+
+        .search-bar {
+            display: flex;
+        }
+
+        .search-bar input {
+            padding: 0.5em;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            background-color: #FFD700;
+            border: none;
+            padding: 0.5em;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .slogan {
+            text-align: center;
+            padding: 3em 0;
+        }
+
+        .slogan h1 {
+            font-size: 2.5em;
+            color: white;
+        }
+
+        .cta-button {
+            background-color: #008080;
+            color: white;
+            padding: 1em 2em;
+            border: none;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+
+        .cta-button:hover {
+            background-color: #FFD700;
+        }
+
+        .hero {
+            background-image: url('hero-image.jpg'); /* Replace with actual image */
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h2 {
+            font-size: 2em;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1em;
+            border-radius: 10px;
+        }
+
+        .how-it-works {
+            display: flex;
+            justify-content: space-around;
+            padding: 2em 0;
+        }
+
+        .column {
+            text-align: center;
+            color: white;
+        }
+
+        .column i {
+            font-size: 3em;
+            color: #FFD700;
+            margin-bottom: 0.5em;
+        }
+
+        .browse-themes {
+            padding: 2em 0;
+        }
+
+        .theme-grid {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .theme-card {
+            width: 30%;
+            position: relative;
+            text-align: center;
+        }
+
+        .theme-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .theme-card h3 {
+            margin-top: 0.5em;
+            color: white;
+        }
+
+        .theme-card button {
+            background-color: #008080;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+
+        .theme-card button:hover {
+            background-color: #FFD700;
+        }
+
+        .pre-book {
+            text-align: center;
+            padding: 2em 0;
+            background-color: #121212;
+        }
+
+        .pre-book h3 {
+            color: white;
+        }
+
+        .pre-book input {
+            padding: 0.5em;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .pre-book button {
+            background-color: #008080;
+            color: white;
+            padding: 0.5em 2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pre-book button:hover {
+            background-color: #FFD700;
+        }
+
+        .testimonials {
+            background-color: #121212;
+            padding: 2em 0;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            color: white;
+            margin-bottom: 1em;
+        }
+
+        .testimonial-card {
+            background-color: #2C2C2C;
+            padding: 1em;
+            margin: 1em auto;
+            width: 60%;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .testimonial-card p {
+            margin: 0.5em 0;
+        }
+
+        .footer {
+            background-color: #121212;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        .footer .social-media a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+
+        .footer .newsletter input {
+            padding: 0.5em;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .footer .newsletter button {
+            padding: 0.5em 1em;
+            background-color: #FFD700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Themezy</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#browse-themes">Browse Themes</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#login" class="login">Login/Signup</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Search themes...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+    </nav>
+
+    <!-- Slogan Section -->
+    <section class="slogan">
+        <h1>Events Tailored to You, Anytime, Anywhere!</h1>
+        <button class="cta-button">Get Started</button>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Find the Perfect Theme, Customize Your Event, and Let the Celebration Begin!</h2>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="column">
+            <i class="fas fa-palette"></i>
+            <h3>Select a Theme</h3>
+            <p>Choose from a wide range of themes that suit your style.</p>
+        </div>
+        <div class="column">
+            <i class="fas fa-cogs"></i>
+            <h3>Customize Your Event</h3>
+            <p>Tailor every detail to make your event unique.</p>
+        </div>
+        <div class="column">
+            <i class="fas fa-check-circle"></i>
+            <h3>Book & Enjoy</h3>
+            <p>Secure your date and let the celebrations begin!</p>
+        </div>
+    </section>
+
+    <!-- Browse Event Themes -->
+    <section class="browse-themes" id="browse-themes">
+        <h2>Explore Our Event Themes</h2>
+        <div class="theme-grid">
+            <div class="theme-card">
+                <img src="wedding.jpg" alt="Wedding Theme">
+                <h3>Weddings</h3>
+                <button>View More</button>
+            </div>
+            <div class="theme-card">
+                <img src="corporate.jpg" alt="Corporate Theme">
+                <h3>Corporate Events</h3>
+                <button>View More</button>
+            </div>
+            <div class="theme-card">
+                <img src="festival.jpg" alt="Cultural Festival">
+                <h3>Cultural Festivals</h3>
+                <button>View More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Book Your Event Section -->
+    <section class="pre-book">
+        <i class="fas fa-calendar-alt"></i>
+        <h3>Pre-book and Secure Your Event Today!</h3>
+        <input type="email" placeholder="Enter your email...">
+        <button>Pre-book Now</button>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-card">
+            <p>"Themezy made our wedding absolutely magical! The customization options were endless, and the team made sure everything went smoothly."</p>
+            <p>- Sarah and John</p>
+        </div>
+        <div class="testimonial-card">
+            <p>"Our corporate event was a huge success, thanks to the innovative themes offered by Themezy. Couldn't have done it without them!"</p>
+            <p>- Corporate Solutions</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="newsletter">
+            <input type="email" placeholder="Subscribe to our newsletter">
+            <button>Subscribe</button>
+        </div>
+        <p>&copy; 2024 Themezy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
